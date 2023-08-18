@@ -1,6 +1,6 @@
 # Parks Lookup
 
-#### _By_ Eva Kemp
+#### _By_ _Eva Kemp_
 
 ## **Technologies Used**
 
@@ -17,8 +17,6 @@
 ## **Description**
 
 A console app that allows users to search for National and State parks using API calls.
-
-<br>
 
 ## **Setup/Installation Requirements**
 
@@ -83,11 +81,8 @@ A console app that allows users to search for National and State parks using API
 - A web page will automatically open in your browser at port 5000 or 5001
 </details>
 
-<br>
-
 ## API
 
-<details>
 <summary>Endpoints</summary>
 
 <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/
@@ -97,10 +92,6 @@ A console app that allows users to search for National and State parks using API
 <span style="color: orange; font-style: italic;">PUT</span> /api/
 <br>
 <span style="color: red; font-style: italic;">DELETE</span> /api/
-<br>
-
-</details>
-
 <br>
 
 ## Debugging
