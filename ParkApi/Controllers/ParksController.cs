@@ -6,5 +6,11 @@ namespace ParkApi.Controllers;
 [Route("[controller]")]
 public class ParkApiController : ControllerBase
 {
+    private readonly ParkApiContext _db;
+
+    public ParkApiController(ParkApiContext db)
+    {
+        _db = db;
+    }
 
 }
