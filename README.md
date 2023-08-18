@@ -103,16 +103,16 @@ A console app that allows users to search for National and State parks using API
 
   - In your Terminal, enter the following commands:<br>
     ```bash
-    $ dotnet tool install --global dotnet-ef --version 6.0.0
+     dotnet tool install --global dotnet-ef --version 6.0.0
     ```
     ```bash
-    $ dotnet add package Microsoft.EntityFrameworkCore -v 6.0.0
+     dotnet add package Microsoft.EntityFrameworkCore -v 6.0.0
     ```
     ```bash
-    $ dotnet add package Pomelo.EntityFrameworkCore.MySql -v 6.0.0
+     dotnet add package Pomelo.EntityFrameworkCore.MySql -v 6.0.0
     ```
     ```bash
-    $ dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.0
+     dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.0
     ```
 
 </details>
