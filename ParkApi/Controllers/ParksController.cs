@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ParkApi.Models;
 
 namespace ParkApi.Controllers
 {
@@ -20,7 +22,7 @@ namespace ParkApi.Controllers
 
             if (location != null)
             {
-                query = query.Where(entry => entry.location == location);
+                query = query.Where(entry => entry.Location == location);
             }
 
             if (name != null)
@@ -30,7 +32,7 @@ namespace ParkApi.Controllers
 
             if (type != null)
             {
-                query = query.Where(entry => entry.Age >= type);
+                query = query.Where(entry => entry.Type == type);
             }
 
             return await query.ToListAsync();
