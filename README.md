@@ -1,4 +1,4 @@
-# Parks Lookup
+# Park API Search
 
 #### _By_ _Eva Kemp_
 
@@ -17,7 +17,7 @@
 
 ## **Description**
 
-A Parks Lookup API that allows users to search for National and State parks by utilizing an API tool like Swagger or Postman.
+A park search API that allows users to search for National and State parks by utilizing an API tool like Swagger or Postman.
 
 ## **Setup/Installation Requirements**
 
@@ -77,7 +77,7 @@ A Parks Lookup API that allows users to search for National and State parks by u
   $ dotnet run
   ```
 
-  (or `dotnet watch run` to see edit and see edits in real time).
+  (or `dotnet watch run` to see edit and see edits in real time and utilize Swagger).
 
 - A web page will automatically open in your browser at port 5000 or 5001
 </details>
@@ -93,17 +93,20 @@ A Parks Lookup API that allows users to search for National and State parks by u
 
 ### Endpoints
 
-<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks
+<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks?page={number}
 
-- Specify the page parameter to see a list of parks.
+- Specify the page number parameter to see a list of parks.
+- Example: `http://localhost:5000/api/parks?page=1`
 
-### Pagination
+#### Pagination
 
 - Returns a list of 5 parks per page.
-- To navigate between pages and see more park items, enter the page size parameter.
+- To navigate between pages and see more park items, enter the page number parameter.
 - Example: `http://localhost:5000/api/parks?page=2`
 
 #### Query by parameter:
+
+- Search for parks based on query specifications:
 
 <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/{id} <br>
 
@@ -125,19 +128,19 @@ A Parks Lookup API that allows users to search for National and State parks by u
   "type": "National"
   }
 
-- The format must be in JSON and have a parkId that isn't currently used by another park.
+- The format must be in JSON and have a parkId that isn't currently linked to another park.
   <br>
 
 <span style="color: orange; font-style: italic;">PUT</span> /api/Parks/{id}
 
 - Allows user to edit or update a park's details by specifying the ParkId.
-- For example `http://localhost:5000/api/Parks/2` would edit the park with a ParkId of 2.
+- For example `http://localhost:5000/api/parks/2` would edit the park with a ParkId of 2.
 
   <br>
 <span style="color: red; font-style: italic;">DELETE</span> /api/Parks/{id}
 
 - Deletes a specific park from the list based on its ParkId.
-- For example `http://localhost:5000/api/Parks/4` would delete the park with the ParkId of 4.
+- For example `http://localhost:5000/api/parks/4` would delete the park with the ParkId of 4.
   <br>
 
 ## Debugging
