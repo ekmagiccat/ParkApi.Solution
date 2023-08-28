@@ -84,6 +84,10 @@ A Parks Lookup API that allows users to search for National and State parks by u
 
 ## API
 
+### Pagination
+
+- Page will return with 5 items at a time.
+
 <summary>Endpoints</summary>
 
 <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/Parks
