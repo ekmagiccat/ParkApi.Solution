@@ -95,10 +95,11 @@ A Parks Lookup API that allows users to search for National and State parks by u
 
 <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks
 
-- Returns a list of 5 parks per page.
+- Specify the page parameter to see a list of parks.
 
 ### Pagination
 
+- Returns a list of 5 parks per page.
 - To navigate between pages and see more park items, enter the page size parameter.
 - Example: `http://localhost:5000/api/parks?page=2`
 
@@ -122,7 +123,9 @@ A Parks Lookup API that allows users to search for National and State parks by u
   "name": "Arches National Park",
   "location": "Utah",
   "type": "National"
-  },
+  }
+
+- The format must be in JSON and have a parkId that isn't currently used by another park.
   <br>
 
 <span style="color: orange; font-style: italic;">PUT</span> /api/Parks/{id}
@@ -133,7 +136,7 @@ A Parks Lookup API that allows users to search for National and State parks by u
   <br>
 <span style="color: red; font-style: italic;">DELETE</span> /api/Parks/{id}
 
-- Deletes a specific park from the list based on the ParkId.
+- Deletes a specific park from the list based on its ParkId.
 - For example `http://localhost:5000/api/Parks/4` would delete the park with the ParkId of 4.
   <br>
 
@@ -162,7 +165,8 @@ A Parks Lookup API that allows users to search for National and State parks by u
 
 ## **Known Bugs**
 
-None known.
+- Accepts blank data when adding a park item.
+- The user must include a page number to get a list of parks returned.
 
 ## License
 
