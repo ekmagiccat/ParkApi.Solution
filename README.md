@@ -13,10 +13,11 @@
 - MySql
 - Git
 - Swagger
+- Postman
 
 ## **Description**
 
-A console app that allows users to search for National and State parks using API calls.
+A Parks Lookup API that allows users to search for National and State parks by utilizing an API tool like Swagger or Postman.
 
 ## **Setup/Installation Requirements**
 
@@ -85,14 +86,41 @@ A console app that allows users to search for National and State parks using API
 
 <summary>Endpoints</summary>
 
-<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/
+<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/Parks
+
+- Returns a list of 5 parks per page.
+
+#### Query by parameter:
+
+<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks?name={name} <br>
+
+<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks?location={location} <br>
+
+<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks?type={type} <br>
 <br>
-<span style="color: green; font-style: italic;">POST</span> /api/
-<br>
-<span style="color: orange; font-style: italic;">PUT</span> /api/
-<br>
-<span style="color: red; font-style: italic;">DELETE</span> /api/
-<br>
+
+<span style="color: green; font-style: italic;">POST</span> /api/Parks
+
+- Allows user to add a new park to the list in JSON format.
+- For example {
+  "parkId": 6,
+  "name": "Yellowstone National Park",
+  "location": "Wyoming",
+  "type": "National"
+  },
+  <br>
+
+<span style="color: orange; font-style: italic;">PUT</span> /api/Parks/{id}
+
+- Allows user to edit or update a park's details by specifying the ParkId.
+- For example `http://localhost:5000/api/Parks/2` would edit the park with a ParkId of 2.
+
+  <br>
+<span style="color: red; font-style: italic;">DELETE</span> /api/Parks/{id}
+
+- Deletes a specific park from the list based on the ParkId.
+- For example `http://localhost:5000/api/Parks/4` would delete the park with the ParkId of 4.
+  <br>
 
 ## Debugging
 
