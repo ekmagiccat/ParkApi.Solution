@@ -16,9 +16,11 @@ namespace ParkApi.Controllers
         }
         // GET api/parks
         [HttpGet]
-        public async Task<List<Park>> Get(string name, string location, string type, int offset)
+        public async Task<List<Park>> Get(string name, string location, string type, int page)
         {
-            int limit = 5;
+            int itemsPerPage = 5;
+            int skipAmount = (page - 1) * itemsPerPage;
+
             IQueryable<Park> query = _db.Parks.AsQueryable();
 
             if (location != null)
@@ -36,8 +38,9 @@ namespace ParkApi.Controllers
                 query = query.Where(entry => entry.Type == type);
             }
 
-            return await query.Skip(offset).Take(limit).ToListAsync();
+            return await query.Skip(skipAmount).Take(itemsPerPage).ToListAsync();
         }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Park>> GetPark(int id)
         {
