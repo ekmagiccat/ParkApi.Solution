@@ -84,18 +84,27 @@ A Parks Lookup API that allows users to search for National and State parks by u
 
 ## API
 
+### Query Parameters:
+
+- parkId
+- name
+- location
+- type
+
 ### Endpoints
 
-<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/Parks
+<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks
 
 - Returns a list of 5 parks per page.
 
 ### Pagination
 
 - To navigate between pages and see more park items, enter the page size parameter.
-- Example: 
+- Example: `http://localhost:5000/api/parks?page=2`
 
 #### Query by parameter:
+
+<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/{id} <br>
 
 <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks?name={name} <br>
 
@@ -107,10 +116,11 @@ A Parks Lookup API that allows users to search for National and State parks by u
 <span style="color: green; font-style: italic;">POST</span> /api/Parks
 
 - Allows user to add a new park to the list in JSON format.
-- For example {
-  "parkId": 6,
-  "name": "Yellowstone National Park",
-  "location": "Wyoming",
+- For example:
+  {
+  "parkId": 11,
+  "name": "Arches National Park",
+  "location": "Utah",
   "type": "National"
   },
   <br>
