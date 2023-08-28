@@ -103,6 +103,7 @@ A park search API that allows users to search for National and State parks by ut
 - Returns a list of 5 parks per page.
 - To navigate between pages and see more park items, enter the page number parameter.
 - Example: `http://localhost:5000/api/parks?page=2`
+- If the page specified contains no data, the api call will return a blank response body [].
 
 #### Query by parameter:
 
